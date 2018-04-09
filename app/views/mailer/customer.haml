@@ -1,0 +1,20 @@
+%a{:href=>"#"}
+  .header
+    %img.header-image{:src=>"https://boxuploader.herokuapp.com/images/email-header.png"}
+%p.mt20 You have uploaded file(s) to 3D Systems.
+%hr
+%h3 Your Submission
+%table.pl10
+  - @meta.each do |v, k|
+    %tr
+      %td.b #{v}:
+      %td.pl10 #{k}
+%hr
+%h3 Uploaded #{@files.count} File(s)
+%table.pl10
+  - @files.each do |f|
+    %tr
+      %td.b #{f["name"]}
+      %td.pl10 
+        = number_to_human_size f["size"]
+      %td.pl10 #{f["modified_at"]}

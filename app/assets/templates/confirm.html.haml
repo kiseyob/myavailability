@@ -1,0 +1,11 @@
+.ngdialog-message
+  .popupbody.confirm
+    .title{:"ng-if"=>"ngDialogData.title"} {{ ngDialogData.title}}
+    .desc
+      .sub-title{:"ng-if"=>"ngDialogData.header"} {{ ngDialogData.header}}
+      .msg{:"ng-repeat"=>"message in messages"} {{ message || "&nbsp;" }}
+    .action.fhvc
+      .dib.minw120{:"ng-if"=>"hideCancel"}
+      .qpe-button.tertiary.minw120.cancel{:"ng-if"=>"!hideCancel", :type=>"button", :"ng-click"=>"closeThisDialog()"} {{cancel}}
+      .qpe-button.primary.minw120.ok{:type=>"button", :"ng-click"=>"confirm()", :id=>'yes-btn'} {{ok}}
+  

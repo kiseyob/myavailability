@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3328328, 2017-01-06T14:37:29-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: FF Good Web Pro Medium by FontFont
+ * URL: http://www.myfonts.com/fonts/fontfont/good-pro/medium/
+ * Copyright: 2010 published by FontShop International GmbH
+ * Licensed pageviews: 5,000,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3328328
+ * 
+ * © 2017 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/32c948");
+
+  
+@font-face {font-family: 'FFGoodWebProMedium';src: url('/webfonts/32C948_0_0.eot');src: url('/webfonts/32C948_0_0.eot?#iefix') format('embedded-opentype'),url('/webfonts/32C948_0_0.woff2') format('woff2'),url('/webfonts/32C948_0_0.woff') format('woff'),url('/webfonts/32C948_0_0.ttf') format('truetype');}
+ 

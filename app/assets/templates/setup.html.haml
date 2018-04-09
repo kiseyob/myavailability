@@ -1,0 +1,10 @@
+.ngdialog{:"ng-if"=>"setup_form.$submitted", :"us-spinner"=>"{radius:15, width:6, length: 7, lines: 11, color: '#b9b9b9'}"}
+%form.setup-form.mt30.ml30{:role=>"form", :name=>"setup_form", :novalidate=>true}
+  .inputs-div.mt20
+    %input.qpe.w300{:name=>"uid", :"qpe-placeholder"=>"data.uid.desc", :"ng-model"=>"data.uid.value", :type=>"text", :"ng-disabled"=>"setup_form.$submitted", :"ng-required"=>"true"}
+  .inputs-div.mt20
+    %input.qpe.w300{:name=>"password", :"qpe-placeholder"=>"data.password.desc", :"ng-model"=>"data.password.value", :type=>"password", :"ng-disabled"=>"setup_form.$submitted", :"ng-required"=>"true"}
+  .inputs-div.mt20
+    %input.qpe.w300{:name=>"email", :"qpe-placeholder"=>"data.email.desc", :"ng-model"=>"data.email.value", :type=>"email", :"ng-disabled"=>"setup_form.$submitted", :"ng-required"=>"true"}
+  
+  .qpe-button.primary.w140.mt20{:"ng-disabled"=>"submit_btn_disable", :"ng-click"=>"submit()"} Submit

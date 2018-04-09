@@ -1,0 +1,30 @@
+!!!html
+%html{:"ng-app"=>"Myav"}
+  %head
+    %meta{:name=>"viewport", :content=>"user-scalable=no, width=device-width, initial-scale=0.8, maximum-scale=0.8"}
+    %meta{:name=>"format-detection", :content=>"telephone=no"}
+    %base{:href=>'/'}
+    %title= @app_name
+    %link{:rel=>"shortcut icon", :href=>"/images/favicon.ico"}
+    = stylesheet_link_tag("application", :media=> "all")
+    = stylesheet_link_tag("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,800")
+    = stylesheet_link_tag("//fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i")
+    = stylesheet_link_tag("MyFontsWebfontsKit.css")
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"
+    = javascript_include_tag("application")
+    = csrf_meta_tags
+    = stylesheet_link_tag("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.3.0/fullcalendar.min.css")
+    = javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.3.0/fullcalendar.min.js")
+
+%body{:"ng-style"=>"bodyStyle"}
+  %div.main-wrapper{:"ui-view"=>""}
+  .alert-flash.flash{:"flash-alert"=>"success", :"active-class"=>"in"}
+    %span.alert-message {{flash.message}}
+  .alert-flash.fade{:"flash-alert"=>"error", :"active-class"=>"in"}
+    %span.alert-message {{flash.message}}
+
+  

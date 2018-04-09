@@ -1,0 +1,232 @@
+// Font and text colors
+// imoprt Google Open Sans
+// http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,800);
+$fonts: 'Myriad Pro', 'Open Sans', sans-serif, 'Noto Sans' !important;
+
+$ws-min-ht: 600px;
+$file-min-ht: 780px;
+// Color variables
+$folder-color:#f4da6a !important;
+$folder-back-color:#b8860b;
+$apptitle-bar-back-color: #333333;
+$apptitle-bar-color: #ffffff;
+$apptitle-bar-font-wt:400;
+$apptitle-bar-font-sz:12px; // Fixed by Ashlyn
+
+$contacts-back-color:#444341;
+$contacts-color:#ffffff;
+
+$link-color:#cbcbcb;
+$link-hover-color:#ffffff;
+
+$link-whiteback-color:#409acc;
+$link-whiteback-hover-color:#090909;
+
+$hyperlink-color:#409acc;
+$hyperlink-hover-color:#090909;
+
+$ws-back-color: #ffffff;
+$toolbar-back-color:#666561;
+$search-back-color:#ffffff;
+$label-back-inactive-color:#cbcbcb;
+$label-back-hover-color:#444342;
+$spacer-line-color:#2e2e2e;
+$note-text-color:#666360;
+
+// icon text button
+$icon-color:#cbcbcb;
+$icon-hov-color:#ffffff;
+$icon-sel-color:#409acc;
+$icon-text-color:#cbcbcb;
+$icon-text-sel-color:#ffffff;
+
+$tiny-font-sz:12px;
+$small-font-sz:14px;
+$big-font-sz:16px;
+$large-font-sz:18px;
+$slarge-font-sz:22px;
+$popup-font-sz:14px;
+
+$small-font-wt:400;
+$strong-font-wt:600;
+
+// Navigation tab
+$nav-back-color:#434343;
+$nav-back-hov-color:#444341; /*#4f4f4f;*/
+$nav-back-sel-color:#409acc;
+$nav-back-dis-color:#434343;
+$nav-back-dis-colora:rgba(67,67,67,0.6);
+
+// Navigation tab - icon and text
+$nav-txt-color:#cbcbcb;
+$nav-txt-hov-color:#ffffff;
+$nav-txt-sel-color:#ffffff;
+$nav-txt-dis-color:#cbcbcb;
+$nav-txt-dis-colora:rgba(203,203,203,0.6);
+// Font - Semi bold, 20 px
+$nav-txt-font-wt:300;
+$nav-txt-font-sz:14px;
+$side-nav-txt-font-sz:14px;
+
+
+// Tool panel title
+$toolpnl-title-color:#ffffff;
+$toolpnl-title-hove-color:#ffffff;
+$toolpnl-title-sel-color:#ffffff;
+$toolpnl-title-font-wt:600;
+$toolpnl-title-font-sz:20px;
+
+// Tool panel - section heading
+$toolpnl-sec-color:#ffffff;
+$toolpnl-sec-hove-color:#ffffff;
+$toolpnl-sec-sel-color:#ffffff;
+$toolpnl-sec-font-wt:800;
+$toolpnl-sec-font-sz:11px;
+
+// Toolbar button - padding
+$toolbtn-back-color:#666360;
+$toolbtn-back-hov-color:#989795;
+$toolbtn-back-sel-color:#409acc;
+$toolbtn-back-clickable-color:#989795;
+$toolbtn-back-dis-color:#666360;
+$toolbtn-back-dis-colora:rgba(103,99,97,0.6);
+
+// Toolbar button - icon and text
+$toolbtn-txt-color:#a1a1a1;
+$toolbtn-txt-hov-color:#ffffff;
+$toolbtn-txt-sel-color:#ffffff;
+$toolbtn-txt-dis-color:#efeeed;
+$toolbtn-txt-dis-colora:rgba(239,238,237,0.6);
+// Font - Bold, 11 px
+$toolbtn-txt-font-wt:700;
+$toolbtn-txt-font-sz:11px;
+
+// Text button - padding
+$txtbtn-back-color:#666360;
+$txtbtn-back-hov-color:#989795;
+$txtbtn-back-sel-color:#409acc;
+$txtbtn-back-dis-color:#666360;
+$txtbtn-back-dis-colora:rgba(103,99,97,0.6);
+
+// Text button - icon and text
+$txtbtn-txt-color:#ffffff;
+$txtbtn-txt-hov-color:#ffffff;
+$txtbtn-txt-sel-color:#ffffff;
+$txtbtn-txt-dis-color:#ffffff;
+$txtbtn-txt-dis-colora:rgba(255,255,255,0.6);
+// Font - Semi bold, 18 px
+$txtbtn-txt-font-wt:600;
+$txtbtn-txt-font-sz:18px;
+
+// Grid view title - background
+$grid-back-color:#ffffff;
+$grid-back-hov-color:#ffffff;
+$grid-back-sel-color:#efeeed;
+$grid-back-dis-color:#efeeed;
+$grid-back-dis-colora:rgba(239,238,237,0.6);
+
+// Grid view overlay
+$grid-over-color:#666360;
+$grid-over-hov-color:#989795;
+$grid-over-sel-color:#409acc;
+$grid-over-dis-color:#666360;
+$grid-over-dis-colora:rgba(103,99,97,0.6);
+
+// Grid view text
+$grid-txt-color:#ffffff;
+$grid-txt-hov-color:#ffffff;
+$grid-txt-sel-color:#ffffff;
+$grid-txt-dis-color:#ffffff;
+$grid-txt-dis-colora:rgba(255,255,255,0.6);
+// Font - Bold, 11 px
+$grid-txt-font-wt:400;
+$grid-txt-font-sz:14px;
+
+// List view title - background
+$list-back-color:#efeeed;
+$list-back-hov-color:#ffffff;
+$list-back-sel-color:#409acc;
+$list-back-dis-color:#cbcbcb;
+$list-back-dis-colora:rgba(203,203,203,1.0);
+
+// List view title - text
+$list-txt-color:#434343;
+$list-txt-hov-color:#4f4f4f;
+$list-txt-sel-color:#ffffff;
+$list-txt-dis-color:#434343;
+$list-txt-dis-colora:rgba(67,67,67,1.0);
+// Font - Semi bold, 24 px
+$list-txt-font-wt:400;
+$list-txt-font-sz:14px;
+// Detailed text - Regular, 18px
+$list-txt-small-font-wt:400;
+$list-txt-small-font-sz:14px;
+
+// Alert - icon
+$alert-color:#cbcbcb;
+$alert-hov-color:#efeeed;
+$alert-sel-color:#409acc;
+$alert-dis-color:#cbcbcb;
+$alert-dis-colora:rgba(67,67,67,0.6);
+
+// Text field - text
+$txtfield-txt-color:#434343;
+$txtfield-txt-hov-color:#4f4f4f;
+$txtfield-txt-sel-color:#409acc;
+$txtfield-txt-dis-color:#434343;
+$txtfield-txt-dis-colora:rgba(67,67,67,0.6);
+
+// Text field - background
+$txtfield-back-color:#efeeed;
+$txtfield-back-hov-color:#ffffff;
+$txtfield-back-sel-color:#ffffff;
+$txtfield-back-dis-color:#efeeed;
+$txtfield-txt-dis-colora:rgba(239,238,237,0.6);
+
+// Text field prompt font
+$txtfiled-prompt-font-style:italic;
+$txtfiled-prompt-font-sz:20px;
+$txtfiled-prompt-font-wt:400;
+
+// Text field entry font
+$txtfiled-ent-font-sz:20px;
+$txtfiled-ent-font-wt:600;
+
+// Panel detail text, properties
+$detail-line-color:#cbcbcb;
+$filter-sel-color:#ffffff;
+$filter-back-sel-color:#409acc;
+
+$detail-label-color:#444342;
+$detail-label-hov-color:#666360;
+$detail-label-sel-color:#666360;
+$detail-label-font-sz:14px;
+$detail-label-font-wt:600;
+
+$detail-copy-color:#666360;
+$detail-copy-hov-color:#666360;
+$detail-copy-sel-color:#666360;
+$detail-copy-font-sz:14px;
+$detail-copy-font-wt:400;
+
+// Print job status
+$pending-back-color:#c7c4c3;
+$inprogress-back-color:#efeeed;
+$done-back-color:#676461;
+$paused-back-color:#676461;
+$canceled-back-color:#676461;
+$warning-back-color:#d3cc45;
+$failed-back-color:#c5444a;
+
+$pending-color:#2f2c2a;
+$inprogress-color:#2f2c2a;
+$done-color:#c9c6c4;
+$paused-color:#c9c6c4;
+$canceled-color:#c9c6c4;
+$warning-color:#2f2c2a;
+$failed-color:#ffffff;
+
+
+// padding
+$layout-inner-padding: 17px;
