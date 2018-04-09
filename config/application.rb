@@ -41,9 +41,5 @@ module Myav
         ] 
       end)
     end
-
-    config.after_initialize do
-      Model.start_clean if Rails.env.production?
-    end
   end
 end
