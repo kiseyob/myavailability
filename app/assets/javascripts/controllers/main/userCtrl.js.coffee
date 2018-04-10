@@ -14,11 +14,13 @@
     defaultView: 'agendaWeek'
     allDaySlot: false
   }
+  $scope.loading = false
 
   $scope.initialize = () ->
     $scope.uid = $stateParams.userId || $location.search().name
     if $state.current.name == 'root.show'
       if !_.isEmpty($scope.uid)
+        $scope.loading = true
         $http.get("/api/users/#{$scope.uid}").success((data) ->
           start = data.working_hours.start_time + data.time_bias + moment().utcOffset()
           end = data.working_hours.end_time + data.time_bias + moment().utcOffset()
@@ -44,8 +46,9 @@
               color: '#5f6dd0'
             }
           )
-
+          $scope.loading = false
         ).error((error, code) ->
+          $scope.loading = false
           $timeout(()->
             $location.path("/setup").search({name: $scope.uid})
           , 1)
