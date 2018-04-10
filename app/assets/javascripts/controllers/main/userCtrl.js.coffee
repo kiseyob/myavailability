@@ -1,4 +1,4 @@
-@userCtrl = ($rootScope, $scope, $state, $stateParams, $q, $timeout, $sce, $cookieStore, $window, $location, $http, ngDialog) ->
+@userCtrl = ($rootScope, $scope, $state, $stateParams, $q, $timeout, $sce, $window, $location, $http, ngDialog, clipboard) ->
   $scope.data =
     uid: 
       value: ''
@@ -9,6 +9,9 @@
     email: 
       value: ''
       desc: 'Email Address including @3dsystems.com'
+    url:
+      value: ''
+      desc: 'MyAvailability URL'
   $scope.submit_btn_disable = true
   $scope.options = {
     defaultView: 'agendaWeek'
@@ -21,7 +24,7 @@
     if $state.current.name == 'root.show'
       if !_.isEmpty($scope.uid)
         $scope.loading = true
-        $http.get("/api/users/#{$scope.uid}").success((data) ->
+        $http.get("/api/users/#{$scope.uid}/events").success((data) ->
           start = data.working_hours.start_time + data.time_bias + moment().utcOffset()
           end = data.working_hours.end_time + data.time_bias + moment().utcOffset()
           min = 360 + data.time_bias + moment().utcOffset() #6am
@@ -62,6 +65,11 @@
         $state.go('root.setup')
     else if $state.current.name == 'root.setup'
       $scope.data.uid.value = $scope.uid
+      if !_.isEmpty($scope.uid)
+        $scope.loading = true
+        $http.get("/api/users/#{$scope.uid}").success((data) ->
+          $scope.data.email.value = data.email
+        )
       $scope.$watch(() -> $scope.onChange())
     return
 
@@ -70,11 +78,23 @@
       $scope.submit_btn_disable = true
     else
       $scope.submit_btn_disable = false
+      
+    $scope.updateURL()
+
     return $scope.submit_btn_disable
+
+  $scope.updateURL = () ->
+    if $scope.data.uid.value
+      $scope.data.url.value = "https://#{$location.host()}/show/#{$scope.data.uid.value}"
+    else
+      $scope.data.url.value = ""
 
   $scope.submit = () ->
     $scope.setup_form.$submitted = true
     $scope.onChange()
+    if clipboard.supported
+      clipboard.copyText($scope.data.url.value)
+    
     data = {
       name: $scope.data.uid.value
       password: $scope.data.password.value
@@ -88,4 +108,4 @@
 
   $scope.initialize()
 
-@userCtrl.$inject = ['$rootScope', '$scope', '$state', '$stateParams', '$q', '$timeout', '$sce', '$cookieStore', '$window', '$location', '$http', 'ngDialog']
+@userCtrl.$inject = ['$rootScope', '$scope', '$state', '$stateParams', '$q', '$timeout', '$sce', '$window', '$location', '$http', 'ngDialog', 'clipboard']

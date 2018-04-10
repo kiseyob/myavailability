@@ -8,9 +8,9 @@
 #= require_tree ./controllers/main
 #= require_tree ./directives/main
 
-Myav = angular.module('Myav', ['ui.router', 'ngCookies', 'ui.bootstrap', 'ngAnimate', 'ngDialog', 'templates', 'angularSpinner', 'ngOnload', 'angular-fullcalendar'])
+Myav = angular.module('Myav', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'ngDialog', 'templates', 'angularSpinner', 'ngOnload', 'angular-fullcalendar', 'angular-clipboard'])
 
-Myav.run(['$rootScope', '$state', '$stateParams', '$window', '$location', '$document', '$timeout', '$cookieStore', 'ngDialog', ($rootScope, $state, $stateParams, $window, $location, $document, $timeout, $cookieStore, ngDialog) ->
+Myav.run(['$rootScope', '$state', '$stateParams', '$window', '$location', '$document', '$timeout', 'ngDialog', ($rootScope, $state, $stateParams, $window, $location, $document, $timeout, ngDialog) ->
     $rootScope.$state = $state
     $rootScope.$stateParams = $stateParams
 

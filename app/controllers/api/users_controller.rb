@@ -4,6 +4,15 @@ class Api::UsersController < ApplicationController
     unless user
       render :nothing => true, :status => 404
     else
+      render :json => {email: user.email}, :status => 200
+    end
+  end
+
+  def events
+    user = User.find_by_name(params[:id].to_s.downcase) rescue nil
+    unless user
+      render :nothing => true, :status => 404
+    else
       events = user.events
       unless events
         if Rails.env.production?

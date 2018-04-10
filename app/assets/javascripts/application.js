@@ -11,9 +11,9 @@
 //= require underscore.string.min
 //= require angular-route.min
 //= require angular-ui-router.min
-//= require angular-cookies.1.5.min
 //= require angular-rails-templates
 //= require angular-fullcalendar
+//= require angular-clipboard
 //= require moment.min
 //= require ui-bootstrap-tpls-1.2.4.min
 //= require_tree ../templates
