@@ -24,6 +24,8 @@
         $http.get("/api/users/#{$scope.uid}").success((data) ->
           start = data.working_hours.start_time + data.time_bias + moment().utcOffset()
           end = data.working_hours.end_time + data.time_bias + moment().utcOffset()
+          min = 360 + data.time_bias + moment().utcOffset() #6am
+          max = 1440 + data.time_bias + moment().utcOffset() #12am
           $scope.options = {
             defaultView: 'agendaWeek'
             allDaySlot: false
@@ -36,6 +38,9 @@
               start: moment().format('YYYY-MM-DD')
               end: moment(moment() + moment.duration(1, 'months')).format('YYYY-MM-DD')
             }
+            minTime: Math.floor(min/60)+":"+min%60+":00",
+            maxTime: Math.floor(max/60)+":"+max%60+":00",
+            height: "auto"
           }
 
           $scope.events = _.map(data.events, (e) ->
