@@ -1,3 +1,5 @@
 %header.header-div{:"ng-style"=>"headerStyle"}
-  .dib.brand-div
+  .brand-div
     .brand.pointer{:"ng-include"=>true, :src=>"'brand.html'"}
+  .brand-title-div
+    .brand-title{:"ng-if"=>"email"} Available time of {{email}}

@@ -21,10 +21,12 @@
 
   $scope.initialize = () ->
     $scope.uid = $stateParams.userId || $location.search().name
+    $rootScope.email = ""
     if $state.current.name == 'root.show'
       if !_.isEmpty($scope.uid)
         $scope.loading = true
         $http.get("/api/users/#{$scope.uid}/events").success((data) ->
+          $rootScope.email = data.email
           start = data.working_hours.start_time + data.time_bias + moment().utcOffset()
           end = data.working_hours.end_time + data.time_bias + moment().utcOffset()
           min = 360 + data.time_bias + moment().utcOffset() #6am

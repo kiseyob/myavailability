@@ -439,27 +439,30 @@ input, button, select, textarea {font-family: $fonts;}
   font-size: $nav-txt-font-sz;
   -webkit-flex: none;
   flex: none;
-  height:60px;
   z-index:9999;top:0;left:0;right:0;
   .header-div{
+    display:-webkit-flex; display:flex;
+    @include align-items(center);
+    @include flex-wrap(wrap);
     width:100%;z-index:9999;
     background-color: #323232;
     .brand-div{}
     .brand-title-div{
-      position:relative;;
-      .brand-title{font-size:18px;color:#444444;position: absolute;top:-32px;left:15px;width:220px;}
+      margin-left: auto;
+      margin-right: 30px;
+      .brand-title{font-size:18px;}
     }
   }
   header {
     // height:60px;
     //overflow:hidden;// Simon
     margin:0 auto;
-    height:60px;
     .brand {
       margin:0;
       display: inline-flex;
       .header-logo{
-        height: 38px;width:450px;
+        height: 38px;
+        width:450px;
         margin: 12px 0px 4px 10px;
         background-image: image-url('3d-systems-logo-horizontal-dark-bkgrd-no-tm.svg');
         background-size:450px 38px;

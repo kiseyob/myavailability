@@ -51,6 +51,7 @@ class User < ActiveRecord::Base
     end_time = whs[2][:end_time_in_minutes][:text].to_i rescue 1080
     
     {
+      :email => self.email,
       :events => events,
       :time_zone => tz,
       :time_bias => (time_bias.to_i / 60),

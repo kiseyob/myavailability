@@ -13,6 +13,7 @@ Myav = angular.module('Myav', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'ngDial
 Myav.run(['$rootScope', '$state', '$stateParams', '$window', '$location', '$document', '$timeout', 'ngDialog', ($rootScope, $state, $stateParams, $window, $location, $document, $timeout, ngDialog) ->
     $rootScope.$state = $state
     $rootScope.$stateParams = $stateParams
+    $rootScope.email = ""
 
     $rootScope.initialize = () ->
       
