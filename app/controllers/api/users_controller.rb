@@ -28,7 +28,13 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    user = User.create :name=>params[:name].downcase, :password=>params[:password], :email=>params[:email].downcase
+    user = User.find_by_name(params[:name].downcase) rescue nil
+    if user
+      user.password = params[:password]
+      user.email = params[:email].downcase
+    else
+      user = User.create :name=>params[:name].downcase, :password=>params[:password], :email=>params[:email].downcase
+    end
     user.save!
     render :json => user.events, :status => 200
   end
