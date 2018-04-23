@@ -1,9 +1,33 @@
 require 'viewpoint'
+require 'openssl'
+require 'digest/sha1'
 include Viewpoint::EWS
 
 class User < ActiveRecord::Base
+  before_save :encrypt_password
+
+  def encrypt_password
+    cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+    cipher.encrypt
+    self.iv = SecureRandom.hex
+    cipher.key = Myav::Application.config.secret_key_base
+    cipher.iv = self.iv
+    encrypted = cipher.update(self.password)
+    encrypted << cipher.final
+    self.password = Base64.encode64(encrypted).encode('utf-8')
+  end
+
+  def decrypt_password
+    cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+    cipher.decrypt
+    cipher.key = Myav::Application.config.secret_key_base
+    cipher.iv = self.iv
+    decrypted = cipher.update(Base64.decode64(self.password.encode('ascii-8bit')))
+    decrypted << cipher.final
+  end
+
   def events
-    cli = Viewpoint::EWSClient.new($ews_url, self.name, self.password)
+    cli = Viewpoint::EWSClient.new($ews_url, self.name, decrypt_password)
 
     utc_time_zone = ActiveSupport::TimeZone.new('UTC')
     start_time = Time.now.iso8601
