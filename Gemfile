@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
 
-gem 'rails', '< 4.1.14'
+gem 'rails', '4.2.10'
 gem 'pg'
 gem 'haml-rails'
 gem 'therubyracer', :platforms => :ruby
