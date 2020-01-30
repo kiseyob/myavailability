@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
     end
     
     tz = user_free_busy.working_hours.first[:time_zone][:elems] rescue []
-    time_bias = ((tz[0][:bias][:text].to_i rescue 0) + (tz[1][:standard_time][:elems][0][:bias][:text].to_i rescue 0) + (tz[2][:daylight_time][:elems][0][:bias][:text].to_i rescue 0)).minutes
+    time_bias = ((tz[0][:bias][:text].to_i rescue 0) + (tz[1][:standard_time][:elems][0][:bias][:text].to_i rescue 0) + (tz[2][:daylight_time][:elems][0][:bias][:text].to_i rescue 0) + 60).minutes
     events = user_free_busy.calendar_event_array.map do |event| 
       {
         :type=> cli.event_busy_type(event),
@@ -73,7 +73,6 @@ class User < ActiveRecord::Base
     end rescue []
     start_time = whs[1][:start_time_in_minutes][:text].to_i rescue 480
     end_time = whs[2][:end_time_in_minutes][:text].to_i rescue 1080
-    
     {
       :email => self.email,
       :events => events,
